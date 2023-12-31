@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+	diContainer := Architecture.CreateDIContainer()
+	diContainer.CreateIDbInit().InitDatabase()
 	r := gin.Default()
 	Architecture.InitRoutes(r)
 	r.Run(":8080")
